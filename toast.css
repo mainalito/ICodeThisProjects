@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.card1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.toast.timer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: gray;
+    overflow: hidden;
+    background-color: gray;
+    overflow: hidden;
+    animation: toast 4s .75s ease-out;
+}
+
+.toast.timer {
+    background-color: white;
+    width: 80%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.toast.dark.timer::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: gray;
+    overflow: hidden;
+    animation: toast 4s .75s ease-out;
+
+}
+
+@keyframes toast {
+    100% {
+        width: 100%;
+        background-color: limegreen;
+        
+    }
+
+    0% {
+        width: 0;
+    }
+}
+
+.toast {
+    background-color: white;
+    width: 80%;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    
+}
+
+.toast.dark {
+    color: white;
+    background-color: black;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.toast.timer{
+    animation: fadein 1s ease-in-out forwards;
+}
+.toast.rounded {
+    border-radius: 20px;
+}
+
+.toast:hover {
+    transform: scale(1.04);
+}
+
+.tick {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.tick i {
+    background-color: green;
+    border-radius: 50%;
+    padding: 5px;
+    color: white;
+}
+
+.tick.dark i {
+    background-color: white;
+    color: green;
+}
+
+.toast.dark.timer.tick.dark i {
+    background-color: green;
+    color: white;
+
+}
+
+p {
+    font-size: 14px;
+}
+
+.close i:hover {
+    color: rgb(193, 186, 186);
+}

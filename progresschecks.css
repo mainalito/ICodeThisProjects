@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #efefef;
+}
+
+body {
+    background-color: #131832;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {}
+
+.card {
+    display: flex;
+   gap: 20px;
+}
+
+.left-card {
+    background-color: #1b2143;
+    width: 500px;
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    height: 200px;
+}
+
+.left-card p {
+    font-size: 14px;
+}
+
+.completed {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.check {
+    width: 35px;
+    height: 12px;
+    background-color: #131832;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.right-card{
+    background-color: #1b2143;
+    width: 200px;
+    padding: 20px;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+
+}
+.checklists{
+    display: flex;
+    gap: 5px;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Search</title>
+    <link rel="stylesheet" href="ImageSearch.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="searchbox">
+        <input
+          type="text"
+          name=""
+          id="search"
+          autocomplete="off"
+          placeholder="Search for images"
+        />
+        <div class="categorysearch">
+          <div class="type">
+            <span id="category">Technology</span>
+            <i class="fa-solid fa-chevron-down chevDown"></i>
+            <div class="box"></div>
+          </div>
+
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <p>Search</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const searchbox = document.querySelector(".searchbox");
+
+      // Store the original box shadow value
+      const originalBoxShadow = searchbox.style.boxShadow;
+      const chevDown = document.querySelector(".type");
+
+      const showBox = document.querySelector(".box");
+      const types = ["All images", "Animals", "Technology", "Nature"];
+
+      chevDown.addEventListener("click", () => {
+        if (showBox.classList.contains("active")) {
+          showBox.classList.remove("active");
+          showBox.innerHTML = ""; // Clear the content of the showBox element
+        } else {
+          types.forEach((type) => {
+            let boxCard = document.createElement("div");
+            showBox.classList.add("active");
+            let name = document.createElement("p");
+            boxCard.classList.add("box-card");
+            name.innerText = type;
+            boxCard.appendChild(name);
+            showBox.appendChild(boxCard);
+          });
+        }
+      });
+      const selectedTypeSpan = document.getElementById('category')
+
+      // Event listener to handle type selection
+      showBox.addEventListener("click", (event) => {
+        if (event.target.tagName === "P") {
+          const selectedType = event.target.innerText;
+         
+          // Create a new span element to display the selected type
+          selectedTypeSpan.innerText = selectedType;
+      
+        }
+      });
+      document.getElementById("search").addEventListener("click", () => {
+        searchbox.style.boxShadow = "0 0 5px 3px lightblue";
+      });
+
+      // Add click event listener to document body
+      document.body.addEventListener("click", (event) => {
+        // Check if the target of the click event is outside the container
+        if (!searchbox.contains(event.target)) {
+          // Reset the box shadow to its original value
+          searchbox.style.boxShadow = originalBoxShadow;
+        }
+      });
+    </script>
+  </body>
+</html>

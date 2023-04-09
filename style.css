@@ -1,0 +1,22 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: aliceblue;
+    min-height: 100vh;
+}
+
+.grid-item {
+    background-color: black;
+    border-left: 1px solid rgb(240, 149, 232);
+    border-bottom: 1px solid white;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    transition: transform 0.2s ease-in-out;
+}
+
+.grid-item:hover {
+    background-color: rgb(159, 110, 207);
+}

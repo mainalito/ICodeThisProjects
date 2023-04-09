@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Checks</title>
+    <link rel="stylesheet" href="progresschecks.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="left-card">
+          <h3>Build your page</h3>
+          <p>
+            Complete actions to unlock new features along the way. On average,
+            completed pages get 30% more traffic
+          </p>
+          <div class="completed"></div>
+          <p id="remainder"></p>
+        </div>
+        <div class="right-card">
+          <div class="checklists"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const steps = document.querySelector(".completed");
+      const checklistContainer = document.querySelector(".right-card");
+
+      const checklist = [
+        "Industry",
+        "Website URL",
+        "Company size",
+        "Description",
+        "Logo",
+        "Location",
+        "SEO",
+        "Custom Button",
+      ];
+
+      function generateCheckList() {
+        for (let i = 0; i < checklist.length; i++) {
+          let checkBox = document.createElement("input");
+          checkBox.type = "checkbox";
+
+          let name = document.createElement("p");
+          name.innerText = checklist[i];
+
+          let checkCont = document.createElement("div");
+          checkCont.classList.add("checklists");
+          checkCont.appendChild(checkBox);
+          checkCont.appendChild(name);
+          generateCounter();
+          checklistContainer.appendChild(checkCont);
+        }
+      }
+      function generateCounter() {
+        let stepCont = document.createElement("div");
+        stepCont.classList.add("check");
+        steps.appendChild(stepCont);
+      }
+
+      let count = 0;
+      generateCheckList();
+
+      let counters = document.querySelectorAll(".check");
+      counters.forEach((counter, index) => {
+        counter.id = `counter-${index + 1}`;
+      });
+
+      document.querySelectorAll(".checklists").forEach((list) => {
+        let checkbox = list.querySelector("input[type='checkbox']");
+
+        if (checkbox !== null) {
+          checkbox.addEventListener("click", () => {
+            // Get the index of the current checkbox
+            let index = Array.from(list.parentNode.children).indexOf(list);
+
+            // Get the corresponding counter div
+            let counter = document.querySelector(`#counter-${index}`);
+            if (checkbox.checked === true) {
+              count++;
+              // Generate a random color
+              let randomColor = `rgb(${Math.floor(
+                Math.random() * 256
+              )}, ${Math.floor(Math.random() * 256)}, ${Math.floor(
+                Math.random() * 256
+              )})`;
+
+              // Set the background color of the counter div
+              counter.style.backgroundColor = randomColor;
+            } else {
+              count--;
+              counter.style.backgroundColor = "";
+            }
+            let remainder = checklist.length - count;
+            document.getElementById(
+              "remainder"
+            ).innerText = `${remainder} remaining to complete`;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

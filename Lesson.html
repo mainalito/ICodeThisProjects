@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson</title>
+    <link rel="stylesheet" href="Lesson.css" />
+    <!-- Include SweetAlert CSS and JS files -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.7/dist/sweetalert2.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          <h3>Was this lesson useful</h3>
+        </div>
+        <div class="card-response">
+          <div class="card-text">
+            <i class="fa-solid fa-face-smile"></i>
+            <p>Yes, it was great!</p>
+          </div>
+          <div class="card-text">
+            <i class="fa-solid fa-face-meh"></i>
+            <p>Sort of, thanks!</p>
+          </div>
+          <div class="card-text">
+            <i class="fa-solid fa-face-frown"></i>
+
+            <p>Not really!</p>
+          </div>
+        </div>
+        <div class="suggestion">
+          <p>
+            Got a suggestion?
+            <span style="text-decoration: underline; cursor: pointer"
+              >Let us know</span
+            >
+          </p>
+        </div>
+        <div class="card-info">
+          <div class="info">
+            <p>Need more help?</p>
+            <a href="#"
+              >Contact support<i class="fa-solid fa-chevron-right"></i
+            ></a>
+          </div>
+          <div class="info">
+            <p>Want to give feedback on a feature?</p>
+            <a href="#"
+              >Submit your feedback <i class="fa-solid fa-chevron-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    // Add click event listener to .info element
+    document.querySelectorAll(".card-text").forEach((card) => {
+      card.addEventListener("click", function () {
+        // Show SweetAlert modal with success message
+        Swal.fire({
+          title: "Successfully submitted",
+          icon: "success",
+          showConfirmButton: true,
+          timer: 1500,
+        });
+      });
+    });
+  </script>
+</html>

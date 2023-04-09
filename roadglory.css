@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: whitesmoke;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.card-header {
+    font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-title {
+    font-size: 14px;
+    text-align: center;
+}
+
+.card-road {
+    min-height: 550px;
+    width: 4px;
+    background-color: gray;
+    position: relative;
+    /* added for positioning the dots */
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    left: -5px;
+    cursor: pointer;
+}
+
+.dot:hover {
+    background-color: rgb(119, 117, 117);
+}
+
+.dot:nth-child(1) {
+    top: 20%;
+    /* position the first dot at 10% */
+}
+
+.dot:nth-child(2) {
+    top: 40%;
+    /* position the second dot at 30% */
+}
+
+.dot:nth-child(3) {
+    top: 60%;
+    /* position the third dot at 50% */
+}
+
+.dot:nth-child(4) {
+    top: 80%;
+    /* position the fourth dot at 70% */
+}
+
+.card-road-body-1,
+.card-road-body-2,
+.card-road-body-3,
+.card-road-body-4 {
+    display: none;
+}
+
+
+.card-road-body-1.active {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    animation: slide-up 0.6s ease forwards;
+    transform: translateX(100%);
+
+}
+
+.card-road-body-1.remove {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 40px;
+    top: 50px;
+    animation: slide-down-fade-out 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+
+}
+
+@keyframes slide-up {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.card-road-body-2.active {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 40px;
+    top: 28%;
+    animation: slide-up 0.6s ease forwards;
+    transform: translateX(100%);
+
+}
+
+.card-road-body-2.remove {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 40px;
+    top: 28%;
+    animation: slide-down-fade-out 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+
+}
+
+.card-road-body-3.active {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 40px;
+    top: 48%;
+    animation: slide-up 0.6s ease forwards;
+    transform: translateX(100%);
+
+}
+
+.card-road-body-3.remove {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 40px;
+    top: 48%;
+    animation: slide-down-fade-out 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+
+}
+
+.card-road-body-4.active {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 40px;
+    top: 72%;
+    animation: slide-up 0.6s ease forwards;
+    transform: translateX(100%);
+
+}
+
+.card-road-body-4.remove {
+    display: flex;
+    background-color: white;
+    width: 300px;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 40px;
+    top: 72%;
+    animation: slide-down-fade-out 0.6s ease forwards;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+
+}
+
+@keyframes slide-down-fade-out {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+.card-road-body-1.active::before,
+.card-road-body-2.active::before,
+.card-road-body-3.active::before,
+.card-road-body-4.active::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+}
+
+.card-road-body-1.active::before,
+.card-road-body-3.active::before {
+    left: -10px;
+    border-right-width: 10px;
+    border-left-color: white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+}
+
+.card-road-body-2.active::before,
+.card-road-body-4.active::before {
+    right: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+}
+
+
+.card-road-body-1 .title,
+.card-road-body-3 .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-road-body-2 .title,
+.card-road-body-4 .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.card-road-body-1 .title span,
+.card-road-body-3 .title span {
+    background-color: lightblue;
+    padding: 1px;
+    border-radius: 3px;
+}
+
+.card-road-body-2 .title span,
+.card-road-body-4 .title span {
+    background-color: lightcoral;
+    padding: 1px;
+    border-radius: 3px;
+}
+
+.card-road-body-1 .title small,
+.card-road-body-3 .title small {
+    color: gray;
+    font-size: 12px;
+}
+
+.card-road-body-2 .title small,
+.card-road-body-4 .title small {
+    color: gray;
+    font-size: 12px;
+}
+
+.card-road-body-1 p,
+.card-road-body-3 p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.card-road-body-2 p,
+.card-road-body-4 p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.card-road-body-2 .more,
+.card-road-body-4 .more {
+    margin-top: 3px;
+    display: flex;
+    gap: 5px;
+     align-items: center;
+    justify-content: space-between;
+}
+
+.card-road-body-1 .more,
+.card-road-body-3 .more {
+    margin-top: 3px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-road-body-1 .more p,
+.card-road-body-3 .more p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.card-road-body-2 .more p,
+.card-road-body-4 .more p {
+    font-weight: 600;
+    font-size: 14px;
+}
