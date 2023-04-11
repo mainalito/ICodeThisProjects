@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="stylesheet" href="product.css" />
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    rel="stylesheet"
+  />
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card-header">Bag Rotterdam Blick</div>
+        <div class="card-body">
+          <div class="card-title">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque
+            facere debitis, maxime animi provident expedita ipsa nostrum labore
+            dolorem vero exercitationem ut veniam perspiciatis nulla quis
+            mollitia odio? Hic, consequatur.
+          </div>
+          <div class="card-description">
+            <div class="left-description">
+              <div class="card-price">
+                <div class="actualprice">$ 99.95</div>
+                <div class="discountprice">$79.95</div>
+              </div>
+              <div class="color">
+                <span>COLOR</span>
+                <div class="colors">
+                    <div class="yellow"></div>
+                    <div class="red"></div>
+                    <div class="black"></div>
+                </div>
+              </div>
+              <div class="size">
+                <span>SIZE</span>
+                <div class="circle">
+                  <h2>U</h2>
+                </div>
+              </div>
+              
+              
+            </div>
+            <div class="right-description">
+              <div class="image">
+                <img id="handbag"
+                  src="https://cdn2.stylecraze.com/wp-content/uploads/product-images/dasein-women-satchel-handbag_afl2404.jpg.webp"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+             <button>ADD TO BAG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="socials">
+        <p>SHARING IS LOVING</p>
+        <div class="social">
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-pinterest"></i>
+            <i class="fa-brands fa-tumblr"></i>
+            <i class="fa-brands fa-facebook"></i>
+        </div>
+    </div>
+  </body>
+  <script>
+    const handbag = document.getElementById('handbag');
+    const images = {
+        black: 'https://image.kilimall.com/kenya/shop/store/goods/5742/2022/05/16527733786494a22628875d34912bde94cf3d9b9d8ec_720.jpg.webp',
+        yellow: 'https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T2/images/I/6198qGmK4tL._UY500_.jpg',
+        red: 'https://cdn2.stylecraze.com/wp-content/uploads/product-images/dasein-women-satchel-handbag_afl2404.jpg.webp'
+    };
+
+    const changeImage = (imageUrl) => {
+        handbag.src = imageUrl;
+    };
+
+    document.querySelector('.black').addEventListener('click', () => { 
+        changeImage(images.black);
+    });
+
+    document.querySelector('.yellow').addEventListener('click', () => {
+        changeImage(images.yellow);
+    });
+
+    document.querySelector('.red').addEventListener('click', () => {
+        changeImage(images.red);
+    });
+</script>
+</html>
