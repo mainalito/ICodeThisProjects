@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+body {
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+}
+
+.container {
+    width: 500px;
+  
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    gap: 15px;
+
+}
+
+.topContainer {
+    width: 300px;
+    height: 400px;
+    background-color: rgb(239, 192, 105);
+    border-radius: 40px;
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    z-index: -999999999999;
+
+}
+
+.bottomContainer {
+    width: 150px;
+    height: 200px;
+    background-color:#eaaf78 ;
+    bottom: -50px;
+    position: absolute;
+    right: -80px;
+    border-radius: 40px;
+    z-index: -999999999999;
+
+}
+.title{
+    font-size: 24px;
+    font-weight: 600;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pickup{
+    display: flex;
+    flex-direction: column;
+}
+.pickup span{
+    font-size: 14px;
+}
+.pickup input{
+    height: 35px;
+}
+.checkbox{
+    display: flex;
+    align-items: center;
+   gap: 10px;
+}
+.checkbox span{
+    font-size: 14px;
+
+}
+.dates{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dates span{
+    font-size: 12px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    gap: 5px;
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 160px;
+    gap: 5px;
+}
+.age{
+    display: flex;
+    font-size: 14px;
+    gap: 10px;
+}
+.others{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+input[type="date"],
+input[type="time"] {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 14px;
+  margin-top: 5px;
+  outline: none;
+  width: 150px;
+  max-width: 100%;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(30%);
+  transition: filter 0.3s ease-in-out;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button,
+input[type="time"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover,
+input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  filter: invert(70%);
+  cursor: pointer;
+}
+
+input[type="date"]::placeholder,
+input[type="time"]::placeholder {
+  color: #999;
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus {
+  border-bottom-color: #ff8c00;
+}
+
+input[type="date"]:hover,
+input[type="time"]:hover {
+  border-bottom-color: #ccc;
+}
+
+@keyframes inputFocus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+input[type="date"]:focus,
+input[type="time"]:focus {
+  animation: inputFocus 0.5s ease-in-out;
+}
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #f8f8f8;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
+    transition: transform 0.3s ease-in-out;
+    transform: scale(0);
+  }
+  
+ 
+  
+  input[type="checkbox"]:checked {
+    border-color: #ff8c00;
+    background-color: #ff8c00;
+    
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="checkbox"]:hover {
+    border-color: #ccc;
+  }
+  
+  input[type="checkbox"]:focus {
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+  input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus {
+    background-color: #fff;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  }
+  
+ 
+  
+
+  button{
+    background-color: #e83b53;
+    border: none;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+  }
+  button:hover{
+    box-shadow: 0 0 15px 2px #e83b53;
+    
+  }
